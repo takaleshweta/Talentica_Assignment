@@ -1,0 +1,240 @@
+$myFont: "Lato", sans-serif;
+$whiteColor: #ffffff;
+$orangeColor: #f16739;
+
+body {
+  font-family: $myFont;
+}
+
+.btn {
+  background-color: $orangeColor;
+  color: $whiteColor;
+}
+
+.high-light-tab {
+  color: $whiteColor;
+  border-color: $orangeColor;
+}
+
+.home-widget-section {
+  h1 {
+    font-size: 56px;
+    margin: 0;
+  }
+  p {
+    font-size: 18px;
+    opacity: 0.8;
+  }
+}
+
+.scroll-icon {
+  background-size: contain;
+  background: transparent url("./assets/down-arrow.svg") 0% 0% no-repeat padding-box;
+  height: 56px;
+  width: 56px;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  position: absolute;
+  bottom: 32px;
+  -webkit-animation: animate-bounce 2s infinite;
+  animation: animate-bounce 2s infinite;
+  cursor: pointer;
+
+  @-webkit-keyframes animate-bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -webkit-transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+    }
+  }
+  @keyframes animate-bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+}
+
+.section-container {
+  .section-title {
+    font-size: 40px;
+    margin: 0;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 10%;
+      height: 2px;
+      background: #f16739;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .section-para {
+    font-size: 16px;
+    opacity: 0.8;
+  }
+}
+
+.grid-wrapper {
+  h4 {
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+#benefits.section-container .grid-wrapper {
+  .box {
+    &:hover img {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
+  img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+  }
+}
+
+#facilities.section-container {
+  .grid-wrapper {
+    background-color: transparent;
+    color: #cccccc;
+    grid-template-columns: repeat(4, minmax(25%, 1fr));
+    width: calc(100% - 96px);
+    margin: 60px 48px;
+  }
+
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 12px 24px;
+
+    img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+      margin-right: 16px;
+      transition: 1s ease all;
+      -moz-transition: 1s ease all;
+      -webkit-transition: 1s ease all;
+    }
+    &:hover img {
+      transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform-origin: center;
+      -moz-transform-origin: center;
+      -webkit-transform-origin: center;
+      transition: transform 1s ease all;
+      -moz-transition: -moz-transform 1s ease all;
+      -webkit-transition: -webkit-transform 1s ease all;
+    }
+  }
+}
+
+#gallery.section-container .grid-wrapper {
+  .box {
+    padding: 0;
+    position: relative;
+    &:hover p {
+      display: block;
+    }
+  }
+  p {
+    position: absolute;
+    display: none;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: transparent linear-gradient(0deg, #000000 0%, #231f2000 100%) 0% 0% no-repeat padding-box;
+    margin: 0;
+    color: #fff;
+    text-align: left;
+    padding: 16px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+#pricing.section-container {
+  .section-para {
+    color: $whiteColor;
+  }
+}
+
+#contact-us.section-container {
+  padding-bottom: 0;
+  .section-title {
+    margin-bottom: 48px;
+    &:after {
+      width: 20%;
+      left: 0;
+      transform: none;
+    }
+  }
+  span {
+    color: $orangeColor;
+    margin-top: 24px;
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #facilities.section-container .grid-wrapper {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: 100%;
+    margin: 60px 0;
+    .grid-item {
+      justify-content: center;
+      padding: 12px 24px;
+      flex-direction: column;
+    }
+  }
+  .section-container {
+    .section-title {
+      font-size: 24px;
+      &:after {
+        width: 30%;
+      }
+    }
+  }
+  #contact-us.section-container {
+    .section-title {
+      &:after {
+        width: 30%;
+      }
+    }
+  }
+  #contact-us.section-container {
+    padding: 24px 0 0;
+  }
+}
